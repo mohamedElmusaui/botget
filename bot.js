@@ -199,7 +199,7 @@ const adminprefix = "#vip";
 client.on('message', message => {
 	var devs = ['408211808814366721'];
   var argresult = message.content.split(` `).slice(1).join(' ');
-    if (!devs.includes(message.author.id)) return message.channel.send ("You Are Not The Bot Owner -_-");
+    if (!devs.includes(message.author.id)) return message.channel.send ("**You Are Not The Bot Owner -_-**");
     
 if (message.content.startsWith(adminprefix + 'setgame')) {
   client.user.setGame(argresult);
@@ -239,7 +239,6 @@ client.on("message", message => {
    }); 
 
 client.on("message", message => {
-	var prefix = "#";
   if (message.content === "#help") {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
