@@ -223,7 +223,7 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 client.on("message", message => {
 	var devs = ['408211808814366721'];
 	if (!devs.includes(message.author.id)) return message.channel.send ("You Are Not The Bot Owner -_-");
- if (message.content === "#viphelp") {
+  if (message.content === "#viphelp") {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
       .setDescription(`
@@ -240,7 +240,7 @@ client.on("message", message => {
 
 client.on("message", message => {
 	var prefix = "#";
- if (message.content === "#help") {
+  if (message.content === "#help") {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
       .setDescription(`
