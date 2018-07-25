@@ -220,9 +220,31 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 }
 
 });
+
+client.on("message", message => {
+	var prefix = "#";
+  if (message.content === "#help") {
+  const embed = new Discord.RichEmbed() 
+      .setColor("#000000")
+      .setDescription(`
+${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
+${prefix}skip ⇏ لتجآوز الأغنية الحآلية
+${prefix}pause ⇏ إيقآف الأغنية مؤقتا
+${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
+${prefix}stop ⇏ لإخرآج البوت من الروم
+${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
+${prefix}queue ⇏ لمعرفة قآئمة التشغيل
+
+ `)
+   message.channel.sendEmbed(embed)
+    
+   }
+   }); 
+
 client.on("message", message => {
 	var devs = ['408211808814366721'];
-	if (!devs.includes(message.author.id)) return message.channel.send ("You Are Not The Bot Owner -_-");
+	if (!devs.includes(message.author.id)) return message.channel.send ("**You Are Not The Bot Owner -_-**");
   if (message.content === "#viphelp") {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
