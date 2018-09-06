@@ -8,7 +8,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const hastebin = require('hastebin-gen');
 const client = new Discord.Client();
- 
+   
 client.on('message' , message => {
 var PREFIX = '-';
 if(message.content === `${PREFIX}dis`) {
@@ -20,7 +20,7 @@ client.users.filter(u => u.discriminator == message.author.discriminator).map(u 
     }
     i = i + 1;
    array.push(`${u.tag}`);
-});
+},
 hastebin(`${array.slice(0, 30).join('\n')}`, 'txt').then(l => {
     message.channel.send(`${l}`);
 }).catch(console.error);
