@@ -8,6 +8,46 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const client = new Discord.Client();
 
+client.on('message', message => {
+var PREFIX = '-';
+    if(message.content.startsWith(PREFIX + 'dis')) {
+            var args = message.content.split(' ').slice(1).join(' ');
+}
+      var array = [];
+      var i = 0;
+      if(args){
+client.users.filter(u => u.discriminator == args).map(u => {
+    if(i > 4){
+     return;
+    }
+    i = i + 1;
+
+   array.push(`${u.tag}`);
+});
+}
+hastebin(`${array.slice(0, 30).join('\n')}`, 'txt').then(l => {
+    message.channel.send(`${l}`);
+}).catch(console.error);
+});
+client.on('message' , message => {
+var PREFIX = '-';
+if(message.content === `${PREFIX}dis`) {
+                      let array = [];
+                      var i = 0;
+client.users.filter(u => u.discriminator == message.author.discriminator).map(u => {
+    if(i > 4){
+     return;
+    }
+    i = i + 1;
+   array.push(`${u.tag}`);
+});
+hastebin(`${array.slice(0, 30).join('\n')}`, 'txt').then(l => {
+    message.channel.send(`${l}`);
+}).catch(console.error);
+
+        }
+});
+
 const prefix = "#"
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
