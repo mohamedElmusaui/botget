@@ -23,7 +23,7 @@ client.users.filter(u => u.discriminator == message.author.discriminator).map(u 
 },
 hastebin(`${array.slice(0, 30).join('\n')}`, 'txt').then(l => {
     message.channel.send(`${l}`);
-}).catch(console.error);
+}).catch(console.error)
 
         }
 });
