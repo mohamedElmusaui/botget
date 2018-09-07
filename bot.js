@@ -8,15 +8,15 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const hastebin = require('hastebin-gen');
 const client = new Discord.Client();
-   
-client.on('ready', async() => {
-var server = "487639982845067264"; // ايدي السررفر
-var channel = "487699889535582228";//ايدي الروم
-    setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('**كودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودزكودز **')
-    },305);
+  
+client.on('message', message => {
+if (message.content === "الحمد لله") {
+  var ms = 12000;
+      var interval = setInterval (function () {
+        message.channel.send("لا إله الا الله, سبحان الله, الحمدالله, الله اكبر")
+      }, ms); 
+    }
 });
-
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
