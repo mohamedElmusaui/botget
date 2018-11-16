@@ -27,6 +27,13 @@ function timerFunc() {
 
 var timer = setTimeout(timerFunc, 1000);
 
-
+client.on('message',function(message) {
+	let prefix = "-";
+let args = message.content.split(" ").slice(1).join(" ");
+if(message.content.startsWith(prefix + "say")) {
+if(!args) return;
+message.channel.send(`${args}`); 
+}
+});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
