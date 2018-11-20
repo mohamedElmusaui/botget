@@ -9,7 +9,7 @@ client.on("message", message => {
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
   client.users.filter(m => m.presence.status !== 'online').forEach(m => {
- m.send(${argresult}\n ${m});
+ m.send(${argresult})\n ${m});
 })
  message.channel.send(\${client.users.filter(m => m.presence.status !== 'online').size}` : عدد الاعضاء المستلمين`); 
  message.delete(); 
